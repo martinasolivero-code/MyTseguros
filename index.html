@@ -51,32 +51,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0; /* Reducido levemente para balancear el alto */
+            padding: 5px 0; /* Ajustado para enmarcar estéticamente el logo */
         }
 
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
 
-        /* LOGO MÁS GRANDE */
+        /* LOGO CON EXCELENTE PRESENCIA */
         .logo-area img {
-            height: 85px; /* Aumentado considerablemente para mayor presencia */
+            height: 95px; /* Ajustado para lucir impecable sin el texto lateral */
             width: auto;
             display: block;
             object-fit: contain;
-        }
-
-        .logo-text {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--dark-neutral);
-            letter-spacing: 0.5px;
-        }
-
-        .logo-text span {
-            color: var(--primary-color);
+            padding: 5px 0;
         }
 
         .nav-links {
@@ -137,7 +126,6 @@
             opacity: 0.95;
         }
 
-        /* Botón del Hero con el dorado del logo */
         .hero .btn-cta {
             background: var(--secondary-color);
             color: var(--dark-neutral);
@@ -310,7 +298,7 @@
 
         /* --- FOOTER --- */
         footer {
-            background-color: #28021d; /* Tono aún más oscuro del violeta base */
+            background-color: #28021d;
             color: #d2bdcb;
             padding: 45px 0;
             font-size: 0.95rem;
@@ -330,7 +318,7 @@
             .navbar {
                 flex-direction: column;
                 gap: 20px;
-                padding: 20px 0;
+                padding: 15px 0;
             }
             .nav-links {
                 gap: 20px;
@@ -339,7 +327,7 @@
                 font-size: 2.4rem;
             }
             .logo-area img {
-                height: 65px; /* Un poco más contenido en móviles */
+                height: 75px; /* Un poco más balanceado en pantallas móviles */
             }
         }
     </style>
@@ -350,9 +338,8 @@
     <header>
         <div class="container navbar">
             <div class="logo-area">
-                <!-- Se asume que el archivo del logo lo guardaste como logo.jpg -->
+                <!-- Recordá que tu archivo de imagen debe llamarse logo.jpg en tu raíz de GitHub -->
                 <img src="logo.jpg" alt="M&T Seguros Logo">
-                <div class="logo-text">M&T <span>SEGUROS</span></div>
             </div>
             <nav>
                 <ul class="nav-links">
