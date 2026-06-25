@@ -242,6 +242,40 @@
         }
 
         /* --- NUEVA SECCIÓN: FORMULARIO ABAJO DE TODO --- */
+       <form action="https://formsubmit.co/TU_CORREO@EMAIL.COM" method="POST">
+    <!-- Configuraciones ocultas para personalizar el servicio -->
+    <input type="hidden" name="_subject" value="¡Nueva cotización desde la Web!">
+    <input type="hidden" name="_captcha" value="false">
+    
+    <div class="form-group">
+        <label for="nombre">Nombre y Apellido</label>
+        <input type="text" id="nombre" name="Nombre y Apellido" placeholder="Ej: Juan Pérez" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="telefono">Teléfono (con código de área)</label>
+        <input type="tel" id="telefono" name="Teléfono" placeholder="Ej: 11 1234 5678" required>
+    </div>
+    
+    <div class="form-auto-row">
+        <div class="form-group">
+            <label for="auto-anio">Año del Vehículo</label>
+            <input type="number" id="auto-anio" name="Año del Vehículo" min="1980" max="2027" placeholder="Ej: 2022" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="auto-marca">Marca</label>
+            <input type="text" id="auto-marca" name="Marca" placeholder="Ej: Volkswagen" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="auto-modelo">Modelo</label>
+            <input type="text" id="auto-modelo" name="Modelo" placeholder="Ej: Gol Trend" required>
+        </div>
+    </div>
+    
+    <button type="submit" class="btn-submit-form">Enviar Consulta</button>
+</form>
         .cotizador-section {
             padding: 90px 0;
             background-color: var(--white);
