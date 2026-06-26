@@ -675,3 +675,43 @@ section,
         scroll-margin-top: 90px; /* Un poco menos de margen adaptado a la barra móvil */
     }
 }
+/* ==========================================================================
+   BOTÓN FLOTANTE DE WHATSAPP (Fijo en el margen inferior derecho)
+   ========================================================================== */
+.whatsapp-btn-float {
+    position: fixed;
+    bottom: 30px; /* Distancia desde abajo */
+    right: 30px;  /* Distancia desde la derecha */
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; /* El color verde oficial de WhatsApp */
+    color: #fff !important;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999; /* Asegura que quede siempre por encima de cualquier otra sección */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    text-decoration: none;
+}
+
+/* Efecto sutil al pasar el mouse por encima */
+.whatsapp-btn-float:hover {
+    transform: scale(1.1);
+    background-color: #20ba5a;
+    box-shadow: 0px 6px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* Optimización para que en celulares no tape contenido importante */
+@media (max-width: 768px) {
+    .whatsapp-btn-float {
+        bottom: 20px;
+        right: 20px;
+        width: 52px;
+        height: 52px;
+        font-size: 30px;
+    }
+}
