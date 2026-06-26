@@ -204,13 +204,12 @@ header {
     font-size: 1.4rem;
     color: var(--dark-neutral);
 }
-
 /* ==========================================================================
-   SECCIÓN COBERTURAS (Optimizado: Títulos arriba, Fotos Limpias y Desplegable Seguro)
+   SECCIÓN COBERTURAS (Corrección de Fondo, Títulos y Desplegables Limpios)
    ========================================================================== */
 .services {
     padding: 90px 0;
-    background-color: #12010d; /* Fondo mucho más oscuro para contraste total */
+    background: var(--dark-gradient); /* El mismo fondo que la sección ¿Hablamos hoy? */
     color: var(--white);
 }
 
@@ -219,7 +218,7 @@ header {
 }
 
 .services .section-subtitle {
-    color: #e2d7df; /* Tono claro legible para el subtítulo */
+    color: #f5e6f0; /* Color claro y legible para el subtítulo */
 }
 
 .services .section-title::after {
@@ -228,16 +227,18 @@ header {
 
 .grid-4 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    align-items: start;
 }
 
-/* Contenedor del desplegable individual */
+/* Contenedor individual de cada cobertura */
 .coverage-details {
-    display: block; /* Quitamos el comportamiento nativo raro */
+    display: flex;
+    flex-direction: column;
 }
 
-/* Título de la cobertura colocado ARRIBA del cajón */
+/* Título de la cobertura colocado ARRIBA del cajón de la imagen */
 .coverage-title {
     font-size: 1.25rem;
     font-weight: 700;
@@ -247,44 +248,53 @@ header {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    cursor: pointer;
+    text-align: center;
 }
 
-/* El cajón con la foto (ahora totalmente limpia, sin filtros oscuros) */
+/* El cajón con la foto (Completamente limpia, sin textos ni filtros encima) */
 .coverage-card-box {
-    height: 220px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     border-radius: 12px;
-    border: 2px solid rgba(193, 154, 66, 0.3);
-    cursor: pointer;
-    transition: transform 0.3s, border-color 0.3s;
+    border: 2px solid rgba(193, 154, 66, 0.4);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .coverage-card-box:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
     border-color: var(--secondary-color);
+    box-shadow: 0 6px 20px rgba(193, 154, 66, 0.2);
 }
 
-/* Quita la flecha nativa de HTML */
+/* Quitamos por completo la interacción nativa molesta del navegador */
 summary {
     list-style: none;
     outline: none;
+    cursor: pointer;
 }
 summary::-webkit-details-marker {
     display: none;
 }
 
-/* Bloque de texto explicativo que se abre ABAJO de todo, empujando las secciones limpiamente */
+/* El cajón con el texto explicativo que se despliega justo ABAJO de la imagen */
 .coverage-text-box {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.08);
     border-left: 3px solid var(--secondary-color);
     padding: 15px;
     margin-top: 15px;
-    border-radius: 4px;
-    color: #f0e6ed;
+    border-radius: 6px;
+    color: #fcf6fa;
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.6;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ==========================================================================
