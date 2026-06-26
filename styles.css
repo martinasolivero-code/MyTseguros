@@ -205,70 +205,84 @@ header {
     color: var(--dark-neutral);
 }
 /* ==========================================================================
-   SECCIÓN COBERTURAS (Corrección de Fondo, Títulos y Desplegables Limpios)
+   SECCIÓN COBERTURAS: ESTILO CÁPSULA PREMIUM (Inspirado en la referencia)
    ========================================================================== */
 .services {
-    padding: 90px 0;
-    background: var(--dark-gradient); /* El mismo fondo que la sección ¿Hablamos hoy? */
+    padding: 100px 0;
+    background: var(--dark-gradient); /* Tu fondo institucional degradado */
     color: var(--white);
 }
 
 .services .section-title {
     color: var(--white);
+    text-align: center;
 }
 
 .services .section-subtitle {
-    color: #f5e6f0; /* Color claro y legible para el subtítulo */
+    color: #f5e6f0;
+    text-align: center;
+    margin-bottom: 70px;
 }
 
 .services .section-title::after {
     background-color: var(--secondary-color);
 }
 
+/* Grilla contenedora alineada arriba */
 .grid-4 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 40px;
     align-items: start;
 }
 
-/* Contenedor individual de cada cobertura */
+/* Contenedor interactivo individual */
 .coverage-details {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
-/* Título de la cobertura colocado ARRIBA del cajón de la imagen */
+/* Título superior alineado a la izquierda (como en tu foto de referencia) */
 .coverage-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: 12px;
+    color: var(--white); /* Texto principal en blanco */
+    text-transform: uppercase; /* Estilo moderno en mayúsculas */
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    text-align: left;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-align: center;
+    flex-direction: column;
+    gap: 4px;
 }
 
-/* El cajón con la foto (Completamente limpia, sin textos ni filtros encima) */
+/* El subtítulo interno dorado para destacar el producto */
+.coverage-title span {
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+}
+
+/* El cajón de la foto con el corte asimétrico exacto de la referencia */
 .coverage-card-box {
-    height: 200px;
+    height: 260px;
+    width: 100%;
     background-size: cover;
     background-position: center;
-    border-radius: 12px;
-    border: 2px solid rgba(193, 154, 66, 0.4);
+    /* Genera el efecto de curva orgánica (cápsula asimétrica) */
+    border-radius: 0px 120px 120px 120px; 
+    border: 2px solid rgba(193, 154, 66, 0.3);
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.coverage-card-box:hover {
-    transform: scale(1.03);
+.coverage-details:hover .coverage-card-box {
+    transform: translateY(-5px);
     border-color: var(--secondary-color);
-    box-shadow: 0 6px 20px rgba(193, 154, 66, 0.2);
+    box-shadow: 0 15px 30px rgba(193, 154, 66, 0.25);
 }
 
-/* Quitamos por completo la interacción nativa molesta del navegador */
+/* Limpieza de etiquetas nativas HTML */
 summary {
     list-style: none;
     outline: none;
@@ -278,23 +292,33 @@ summary::-webkit-details-marker {
     display: none;
 }
 
-/* El cajón con el texto explicativo que se despliega justo ABAJO de la imagen */
+/* Caja de texto explicativo que se despliega limpiamente debajo de la cápsula */
 .coverage-text-box {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.07);
     border-left: 3px solid var(--secondary-color);
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 6px;
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 8px;
     color: #fcf6fa;
     font-size: 0.95rem;
     line-height: 1.6;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.2);
     animation: slideDown 0.3s ease-out;
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-5px); }
+    from { opacity: 0; transform: translateY(-8px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste responsivo para celulares */
+@media (max-width: 768px) {
+    .grid-4 {
+        gap: 50px;
+    }
+    .coverage-card-box {
+        height: 280px; /* Un poco más alta en pantallas chicas para lucir el corte */
+    }
 }
 
 /* ==========================================================================
