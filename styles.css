@@ -482,7 +482,7 @@ footer {
 }
 /* Corrección de scroll para que no se corte el título de la sección al clickear enlaces */
 .cotizador-section {
-    scroll-margin-top: 110px; /* Compensa la altura de la barra superior fija */
+    scroll-margin-top: 80px; /* Compensa la altura de la barra superior fija */
 }
 
 /* Estilos para el menú desplegable */
@@ -498,7 +498,7 @@ footer {
     transition: border-color 0.3s;
     cursor: pointer;
     appearance: none; /* Quita el diseño por defecto */
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238c1567' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-image: url("banner-principal.jpg");
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 15px;
