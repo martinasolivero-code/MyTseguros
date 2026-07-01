@@ -715,3 +715,11 @@ section,
         font-size: 30px;
     }
 }
+/* ==========================================================================
+   ELIMINACIÓN DEFINITIVA DEL BOTÓN CONSULTAR DEL MENÚ
+   ========================================================================== */
+.btn-consultar, 
+nav a[href="#consultar-plan"], 
+.navbar a.btn-consultar {
+    display: none !important; /* Fuerza a la web a ocultar el botón en cualquier pantalla */
+}
